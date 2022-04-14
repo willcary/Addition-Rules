@@ -58,10 +58,10 @@ function App() {
               value="Check Answer"
               className="btn btn-primary"
             />
-            <button onClick={onClick} className="btn btn-secondary">
-              Next question
-            </button>
           </form>
+          <button onClick={onClick} className="btn btn-secondary">
+            Next question
+          </button>
         </div>
       </main>
     </div>
