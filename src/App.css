@@ -32,6 +32,11 @@ code {
   text-align: right;
 }
 
+code,
+input[type="text"] {
+  padding-right: 0.25em;
+}
+
 /* Form */
 form {
   display: flex;
