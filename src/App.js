@@ -27,11 +27,6 @@ function App() {
       if (answer == userAnswer) {
         setCorrectAnswers(correctAnswers + 1);
       }
-      // alert(
-      //   answer == userAnswer
-      //     ? "Correct, nice job!"
-      //     : `Incorrect: answer was ${answer}`
-      // );
     }
   }
 
@@ -43,6 +38,20 @@ function App() {
     setNumbers([setRandomNumber(), setRandomNumber()]);
     setUserAnswer("");
     setIsDisabled(false);
+  }
+
+  function alert() {
+    return answer == userAnswer ? (
+      <p className="alert alert-correct">
+        Correct,
+        <br /> fantastic work!
+      </p>
+    ) : (
+      <p className="alert alert-incorrect">
+        Incorrect:
+        <br /> answer was {answer}
+      </p>
+    );
   }
 
   // Check userAnswer against real answer
@@ -58,6 +67,7 @@ function App() {
       </header>
       <main>
         <div className="math-body">
+          {isDisabled && alert()}
           <p>{numbers[0]}</p>
           <p>+{numbers[1]}</p>
           <hr />

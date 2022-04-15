@@ -18,8 +18,9 @@ main {
   height: calc(100vh - 100px);
 }
 
-hr {
-  margin: 0.5rem 0 1rem 0;
+.math-body {
+  max-width: 250px;
+  position: relative;
 }
 
 .answer-info {
@@ -32,6 +33,10 @@ hr {
 h1 {
   margin: 0;
   font-size: var(--fs-large);
+}
+
+hr {
+  margin: 0.5rem 0 1rem 0;
 }
 
 p {
@@ -50,6 +55,30 @@ input[type="text"] {
 small {
   font-size: 1.5rem;
   display: block;
+}
+
+.alert {
+  font-size: var(--fs-small);
+  text-align: left;
+  width: 100%;
+  position: absolute;
+  top: -61.6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 600px) {
+  .alert {
+    top: -67.2px;
+  }
+}
+
+.alert-correct {
+  color: var(--dark-green);
+}
+
+.alert-incorrect {
+  color: var(--dark-red);
 }
 
 /* Form */
