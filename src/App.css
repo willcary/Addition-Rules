@@ -10,7 +10,6 @@ header {
   margin: 0;
 }
 
-/* Layout */
 main {
   display: flex;
   justify-content: center;
@@ -19,22 +18,38 @@ main {
   height: calc(100vh - 100px);
 }
 
+hr {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.answer-info {
+  margin-top: 1rem;
+  background-color: var(--light-gray);
+  border-radius: 0.25rem;
+}
+
 /* Typography */
 h1 {
   margin: 0;
+  font-size: var(--fs-large);
 }
 
-code {
-  display: block;
+p {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   letter-spacing: 1px;
   text-align: right;
+  margin: 0;
 }
 
-code,
+p,
 input[type="text"] {
   padding-right: 0.25em;
+}
+
+small {
+  font-size: 1.5rem;
+  display: block;
 }
 
 /* Form */
@@ -42,7 +57,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  max-width: 200px;
+  max-width: 250px;
   margin-bottom: 0;
 }
 
@@ -60,6 +75,20 @@ input[type="text"] {
   color: var(--dark-gray);
 }
 
+input[type="text"]:focus {
+  outline-color: var(--green);
+}
+
+.input-disabled-correct {
+  background-color: var(--light-gray);
+  border: 1px solid var(--green);
+}
+
+.input-disabled-incorrect {
+  background-color: var(--light-gray);
+  border: 1px solid var(--dark-red);
+}
+
 .btn {
   font-size: 1.5rem;
   padding: 0.25em 0.5em;
@@ -75,10 +104,32 @@ input[type="text"] {
   background-color: var(--green);
   color: var(--light);
   border: 2px solid var(--green);
+  margin-top: 0.25em;
+  transition: background-color 250ms ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-green);
 }
 
 .btn-secondary {
   background-color: var(--dark-gray);
   color: var(--light);
   border: 2px solid var(--dark-gray);
+  transition: background-color 250ms ease-in;
+}
+
+.btn-secondary:hover {
+  background-color: var(--dark);
+}
+
+.btn-disabled {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  border: 2px solid var(--light-gray);
+  margin-top: 0.25em;
+}
+
+.btn-disabled:hover {
+  cursor: not-allowed;
 }
