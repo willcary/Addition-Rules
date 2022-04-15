@@ -24,7 +24,7 @@ main {
 }
 
 .answer-info {
-  margin-top: 1rem;
+  margin-top: 0.5em;
   background-color: var(--light-gray);
   border-radius: 0.25rem;
 }
