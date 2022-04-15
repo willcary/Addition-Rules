@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
 function App() {
@@ -13,14 +13,26 @@ function App() {
   ]);
   const [answer, setAnswer] = useState("");
   const [userAnswer, setUserAnswer] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [totalAnswers, setTotalAnswers] = useState(0);
+
+  const inputRef = useRef(null);
 
   function handleSubmit(event) {
     event.preventDefault();
-    alert(
-      answer == userAnswer
-        ? "Correct, nice job!"
-        : `Incorrect: answer was ${answer}`
-    );
+    if (!isDisabled) {
+      setIsDisabled(true);
+      setTotalAnswers(totalAnswers + 1);
+      if (answer == userAnswer) {
+        setCorrectAnswers(correctAnswers + 1);
+      }
+      // alert(
+      //   answer == userAnswer
+      //     ? "Correct, nice job!"
+      //     : `Incorrect: answer was ${answer}`
+      // );
+    }
   }
 
   function handleChange(event) {
@@ -30,11 +42,13 @@ function App() {
   function onClick() {
     setNumbers([setRandomNumber(), setRandomNumber()]);
     setUserAnswer("");
+    setIsDisabled(false);
   }
 
   // Check userAnswer against real answer
   useEffect(() => {
     setAnswer(numbers.reduce((a, b) => a + b, 0));
+    inputRef.current.focus();
   }, [numbers]);
 
   return (
@@ -44,24 +58,42 @@ function App() {
       </header>
       <main>
         <div className="math-body">
-          <code>{numbers[0]}</code>
-          <code>+{numbers[1]}</code>
+          <p>{numbers[0]}</p>
+          <p>+{numbers[1]}</p>
+          <hr />
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               name="answer"
+              disabled={isDisabled}
               value={userAnswer}
+              className={
+                !isDisabled
+                  ? ""
+                  : answer == userAnswer
+                  ? "input-disabled-correct"
+                  : "input-disabled-incorrect"
+              }
+              ref={inputRef}
               onChange={handleChange}
             />
             <input
               type="submit"
               value="Check Answer"
-              className="btn btn-primary"
+              className={isDisabled ? "btn btn-disabled" : "btn btn-primary"}
             />
           </form>
           <button onClick={onClick} className="btn btn-secondary">
             Next question
           </button>
+          <div className="answer-info">
+            <small>correct: {correctAnswers}</small>
+            <small>total: {totalAnswers}</small>
+            <small>
+              percent ✓:{" "}
+              {Math.round((correctAnswers / totalAnswers) * 100) || "0"}
+            </small>
+          </div>
         </div>
       </main>
     </div>
