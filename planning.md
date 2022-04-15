@@ -22,7 +22,7 @@ In this React application, the user is given an addition problem with two number
 
 My initial design was slightly different from the end result (see sketch below, apologies for the handwriting!), but held true to the main design themes. I wanted a vertical layout because it makes it so much easier when you're learning to add as a child. I made sure to align the numbers so each column is easy to visualize. The main notable differences from my initial design was moving the alert message to the top rather than on the bottom and the format for the # of correct answers.
 
-![Initial sketch of app layout/design](./src/images/renci-task-sketch.jpg)
+<img src='./src/images/renci-task-sketch.jpg' alt='Initial sketch of app layout/design' width='500px'/>
 
 ## Enhancements
 
