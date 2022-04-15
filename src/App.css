@@ -27,6 +27,7 @@ main {
   margin-top: 0.5em;
   background-color: var(--light-gray);
   border-radius: 0.25rem;
+  padding: 0.25em;
 }
 
 /* Typography */
