@@ -1,6 +1,6 @@
 # Addition Rules!
 
-See [Live Version]()
+See [Live Version](https://additionrules.netlify.app/)
 
 In this React application, the user is given an addition problem with two numbers ranging from 0 to 100. There is a controlled input for the user to enter their answer. The user should click the primary "Check Answer" button to submit their answer and get feedback of whether or not it was correct as calculated by the MathJS API. After submission, the "Check Answer" button turns grey to indicate it is disabled until the user clicks the "next question" button which will load two new random numbers. The "Check Answer" button then returns to it's original green color. The user always has the option to skip a question.
 
@@ -16,7 +16,7 @@ _Contributors are welcome!_ See `planning.md` for some ideas. Other ideas that w
 
 ## Build and Deploy
 
-To ensure the app is ready for production, you need to run the command `npm run build`. This will optimize the build for best performance. From there, you can use the production build to deploy to your host of choice. The [live version]() as linked above is hosted on [netlify](https://www.netlify.com/).
+To ensure the app is ready for production, you need to run the command `npm run build`. This will optimize the build for best performance. From there, you can use the production build to deploy to your host of choice. The [live version](https://additionrules.netlify.app/) as linked above is hosted on [netlify](https://www.netlify.com/).
 
 ## Technologies and Credits
 
