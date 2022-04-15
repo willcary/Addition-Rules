@@ -24,7 +24,7 @@ function App() {
     if (!isDisabled) {
       setIsDisabled(true);
       setTotalAnswers(totalAnswers + 1);
-      if (answer == userAnswer) {
+      if (answer === Number(userAnswer)) {
         setCorrectAnswers(correctAnswers + 1);
       }
     }
@@ -41,7 +41,7 @@ function App() {
   }
 
   function alert() {
-    return answer == userAnswer ? (
+    return answer === Number(userAnswer) ? (
       <p className="alert alert-correct">
         Correct,
         <br /> fantastic work!
@@ -98,7 +98,7 @@ function App() {
               className={
                 !isDisabled
                   ? ""
-                  : answer == userAnswer
+                  : answer === Number(userAnswer)
                   ? "input-disabled-correct"
                   : "input-disabled-incorrect"
               }
