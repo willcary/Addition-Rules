@@ -13,3 +13,7 @@ Discuss how you would add (or actually add) one or two of the following enhancem
 - Limit the number of incorrect answers
 - Brand the application
 - _Anything_ else
+
+# Planning Addition Rules!
+
+![Initial sketch of app layout/design](./src/images/renci-task-sketch.jpg)
