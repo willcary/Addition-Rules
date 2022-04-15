@@ -56,8 +56,27 @@ function App() {
 
   // Check userAnswer against real answer
   useEffect(() => {
-    setAnswer(numbers.reduce((a, b) => a + b, 0));
     inputRef.current.focus();
+    const [a, b] = numbers;
+    //=============================================== MathJS request =================================
+    fetch("http://api.mathjs.org/v4/?expr=" + encodeURIComponent(`${a}+${b}`))
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not OK");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setAnswer(data);
+      })
+      .catch((error) => {
+        console.error(
+          "There has been a problem with your fetch operation:",
+          error
+        );
+        setAnswer(numbers.reduce((a, b) => a + b, 0));
+      });
   }, [numbers]);
 
   return (
