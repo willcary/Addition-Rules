@@ -67,7 +67,6 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setAnswer(data);
       })
       .catch((error) => {
