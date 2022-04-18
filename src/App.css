@@ -92,6 +92,9 @@ form {
 }
 
 input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  opacity: 1;
   margin-bottom: 0.5rem;
   border-radius: 0.25em;
   border: 1px solid var(--dark-gray);
