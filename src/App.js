@@ -109,6 +109,7 @@ function App() {
               type="submit"
               value="Check Answer"
               className={isDisabled ? "btn btn-disabled" : "btn btn-primary"}
+              disabled={isDisabled}
             />
           </form>
           <button onClick={onClick} className="btn btn-secondary">
